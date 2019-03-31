@@ -21,13 +21,10 @@ void setup()
 
 
 void loop() {
-  rose(15);
-  rose(15);
-  warm(15);
+
   warm(15);
   cool(15);
-  cool(15);
-  stripe(15);
+  rose(15);
   stripe(15);
 }
 
