@@ -4,3 +4,9 @@ The colors are generated via a Galvanic Skin Response measurement taken from the
 
 ![Example double exposure photograph](/examples/aura-group.png)
 
+# How It Works
+
+# Hardware
+
+# Further Reference
+
