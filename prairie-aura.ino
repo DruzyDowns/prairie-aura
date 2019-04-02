@@ -179,9 +179,6 @@ void yellow(uint8_t wait) {
   strip.setPixelColor(13, j, 255, 0, 0);
 
 
-
-
-
     if ((i == 200) && (j == 0)) {
       x = -1;  // switch direction at peak
       y = 1;
