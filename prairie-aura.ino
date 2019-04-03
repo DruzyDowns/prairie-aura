@@ -23,6 +23,16 @@ void setup()
 void loop() {
 
 
+  stripe(25);
+  strip.clear();
+  warm(25);
+  strip.clear();
+  cool(25);
+  strip.clear();
+  rose(25);
+  strip.clear();
+  yellow(25);
+  strip.clear();
   purple(25);
   strip.clear();
 }
@@ -191,9 +201,11 @@ void purple(uint8_t wait) {
   for (int i = 0, j = 200; (i > -1) && (j > -1); i = i + x, j = j + y) {
 
   strip.setPixelColor(36, 255, 0, 0, 0);
-  strip.setPixelColor(29, 255, 0, 255 , 0);
-  strip.setPixelColor(28, 255, 0, 0, 0);
-  strip.setPixelColor(20, 0, 0, 255, 0);
+  strip.setPixelColor(29, j, 0, 255 , 0);
+  strip.setPixelColor(28, j, 0, 0, 0);
+  strip.setPixelColor(27, i, 0, j, 0);
+  strip.setPixelColor(21, j, 0, 0);
+  strip.setPixelColor(20, 0, 0, i, 0);
 
 
 
