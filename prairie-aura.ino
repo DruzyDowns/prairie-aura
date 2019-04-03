@@ -23,15 +23,8 @@ void setup()
 void loop() {
 
 
-  stripe(25);
+  purple(25);
   strip.clear();
-  warm(25);
-  strip.clear();
-  cool(25);
-  strip.clear();
-  rose(25);
-  strip.clear();
-  yellow(25);
 }
 
 
@@ -177,6 +170,31 @@ void yellow(uint8_t wait) {
   strip.setPixelColor(21, j, 255, 0, 0);
   strip.setPixelColor(20, j, 0, 0, 0);
   strip.setPixelColor(13, j, 255, 0, 0);
+
+
+    if ((i == 200) && (j == 0)) {
+      x = -1;  // switch direction at peak
+      y = 1;
+    }
+
+    strip.show();
+    delay(wait);
+  }
+
+}
+
+
+void purple(uint8_t wait) {
+  uint16_t i ;
+  int x = 1;
+  int y = -1;
+  for (int i = 0, j = 200; (i > -1) && (j > -1); i = i + x, j = j + y) {
+
+  strip.setPixelColor(36, 255, 0, 0, 0);
+  strip.setPixelColor(29, 255, 0, 255 , 0);
+  strip.setPixelColor(28, 255, 0, 0, 0);
+  strip.setPixelColor(20, 0, 0, 255, 0);
+
 
 
     if ((i == 200) && (j == 0)) {
