@@ -1,0 +1,23 @@
+if (finger <= 500 && finger >= 401) {
+  cool(25);
+}
+
+else if (finger <= 400 && finger >= 351) {
+  warm(25);
+}
+else if (finger <= 350 && finger >= 301) {
+  purple(25);
+}
+else if (finger <= 300 && finger >= 251) {
+  rose(25);
+}
+else if (finger <= 250 && finger >= 201) {
+  yellow(25);
+}
+else if (finger <= 200 && finger >= 100) {
+  purple(25);
+}
+
+else {
+  stripe(25);
+}

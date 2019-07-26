@@ -11,30 +11,47 @@
 //   NEO_RGB     Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(40, PIN, NEO_GRBW + NEO_KHZ800);
 
+const int GSR=A0;
+int sensorValue=0;
+int finger=0;
+
 void setup()
   {
     Serial.begin(9600);
     strip.begin();
     strip.show();
-    strip.setBrightness(50);
+    strip.setBrightness(15);
 }
 
 
 void loop() {
 
+  strip.clear();
 
-  stripe(25);
-  strip.clear();
-  warm(25);
-  strip.clear();
-  cool(25);
-  strip.clear();
-  rose(25);
-  strip.clear();
-  yellow(25);
-  strip.clear();
-  purple(25);
-  strip.clear();
+
+  long sum=0;
+  for(int i=0;i<10;i++)           //Average the 10 measurements to remove the glitch
+      {
+      sensorValue=analogRead(GSR);
+      sum += sensorValue;
+      delay(5);
+      }
+   finger = sum/10;
+   Serial.println(finger);
+
+
+   stripe(25);
+  // strip.clear();
+  // warm(25);
+  // strip.clear();
+  // cool(25);
+  // strip.clear();
+  // rose(25);
+  // strip.clear();
+  // yellow(25);
+  // strip.clear();
+  // purple(25);
+  // strip.clear();
 }
 
 
@@ -113,11 +130,11 @@ void stripe(uint8_t wait) {
   strip.setPixelColor(28, 255, i, 0, 0);
   strip.setPixelColor(27, 255, i, 0, 0);
   strip.setPixelColor(22, j, i, j, 0);
-  strip.setPixelColor(21, j, 0, 255, 0);
+  strip.setPixelColor(21, j, 50, 255, 0);
   strip.setPixelColor(20, j, i, j, 0);
-  strip.setPixelColor(13, 0, 255, 0, 0);
-  strip.setPixelColor(12, 0, 255, 0, 0);
-  strip.setPixelColor(11, 0, 255, 0, 0);
+  strip.setPixelColor(13, 0, 200, 0, 0);
+  strip.setPixelColor(12, 0, 200, 0, 0);
+  strip.setPixelColor(11, 0, 175, 0, 0);
 
 
 
